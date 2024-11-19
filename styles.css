@@ -1,0 +1,108 @@
+** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100wh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("");
+}
+
+.caixa-maior {
+    background-color: #000000;
+    opacity: 0.8;
+    border-radius: 25px;
+    padding: 20px;
+    width: 950px;
+    max-width: 450px;
+    color: #ffffff;
+    cursor: grab; /* Cursor de "pegar" para indicar que é arrastável */
+    position: absolute; /* Para que o elemento possa ser movido livremente */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.caixa-maior:active {
+    animation: pulse 0.3s ease-in-out;
+    
+}
+
+  .caixa-maior:hover {
+    transform: scale(1.05); /* Expande o elemento para 5% maior */
+    opacity: 0.8; /* Diminui a opacidade para 80% */
+  }
+.input-cidade {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 20px;
+    background-color: #7c7c7c2b;
+    color: #ffffff;
+    width: calc(100% - 100px);
+}
+
+.botao-busca {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #7c7c7c2b;
+    cursor: pointer;
+    float: right;
+}
+
+.img-busca {
+    width: 20px;
+}
+
+.caixa-media {
+    margin-top: 30px;
+}
+
+.cidade {
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.temp {
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.caixa-menor {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.texto-previsao {
+    color: #ffffff;
+    margin-left: 20px;
+    text-transform: capitalize;
+}
+
+.umidade {
+    color: #ffffff;
+    margin-top: 20px;
+}
+body {
+    background-image: url('NubladoCHOVENDO.gif');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out; 
+  }

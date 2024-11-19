@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src = "script.js"></script>
+    <title>Previsão do Tempo</title>
+</head>
+<body>
+    <div class="texto-temporario" id="textoTemporario"></div>
+    <div class="caixa-maior">
+        <input class="input-cidade" placeholder="Digite o nome da Cidade">
+        <button class="botao-busca" onclick="cliqueiNoBotao()">
+            <img class="img-busca" alt="busca" src="https://www.svgrepo.com/show/488200/find.svg">
+        </button>
+        <div class="caixa-media"></div>
+        <h2 class="cidade">Tempo em São Paulo</h2>
+        <p class="temp">21º C</p>
+
+        <div class="caixa-menor">
+            <img class="img-previsao" alt="icone-info-tempo" src="https://openweathermap.org/img/wn/04n.png">
+            <p class="texto-previsao">Nublado</p>
+        </div>
+        <p class="umidade">Umidade: 76%</p>
+    </div>
+    
+    
+</body>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        color: white;
+        transition: background-image 1s ease-in-out;
+    }
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .cidade, .temp, .texto-previsao, .umidade {
+        font-size: 24px;
+    }
+    .input-cidade {
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .btn-buscar {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        border-radius: 5px;
+    }
+</style>
+<script>
+    const caixa = document.querySelector('.caixa-maior');
+
+function gerarCorAleatoria() {
+  const letras = '0123456789ABCDEF';
+  let cor = '#';
+  for (let i = 0; i < 6; i++) {
+    cor += letras[Math.floor(Math.random() * 16)];
+  }
+  return cor;
+}
+
+caixa.addEventListener('click', function() {
+  caixa.style.backgroundColor = gerarCorAleatoria();
+});
+const textoTemporario = document.getElementById('textoTemporario');
+
+caixa.addEventListener('click', function() {
+
+  textoTemporario.textContent = "1+";
+  textoTemporario.style.opacity = 1.6; 
+
+  setTimeout(() => {
+    textoTemporario.style.opacity = 0.5;
+  }, 2000);
+});
+
+  </script>
+</html>
